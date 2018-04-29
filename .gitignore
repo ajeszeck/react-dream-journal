@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-base.js
+./src/base.js
 
 # testing
 /coverage
