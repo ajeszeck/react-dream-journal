@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import DreamsContainer from './components/DreamsContainer.js'
 import base from './base.js';
+import AddDreamForm from './components/AddDreamForm.js'
 
 class App extends Component {
   state = {
@@ -27,9 +28,10 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Dream Journal</h1>
         </header>
-        <p className="App-intro">
-          <DreamsContainer />
-        </p>
+        <div className="app-body">
+          <AddDreamForm />
+          <DreamsContainer className="dream-container"/>
+        </div>
       </div>
     );
   }

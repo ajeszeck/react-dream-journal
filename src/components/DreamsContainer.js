@@ -5,8 +5,8 @@ class DreamsContainer extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>This is where the dreams go.</h1>
+      <div className="dream-container">
+        <p>This is where the dreams go.</p>
         <Dream />
         <Dream />
         <Dream />
