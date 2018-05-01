@@ -6,7 +6,7 @@ import AddDreamForm from './components/AddDreamForm.js'
 
 class App extends Component {
   state = {
-    dreams: [{description: "I am a dream in state."}],
+    dreams: {},
   };
 
   componentDidMount() {
@@ -22,6 +22,13 @@ class App extends Component {
     base.removeBinding(this.ref);
   };
 
+  addDream = (dream) => {
+    const dreams = {...this.state.dreams}
+    dreams[`dream${Date.now()}`] = dream;
+    this.setState({ dreams });
+    console.log(this.state.dreams)
+  }
+
   render() {
     return (
       <div className="App">
@@ -29,8 +36,8 @@ class App extends Component {
           <h1 className="App-title">Dream Journal</h1>
         </header>
         <div className="app-body">
-          <AddDreamForm />
-          <DreamsContainer className="dream-container"/>
+          <AddDreamForm addDream={this.addDream}/>
+          <DreamsContainer className="dream-container" dreams={this.state.dreams}/>
         </div>
       </div>
     );

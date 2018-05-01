@@ -6,10 +6,13 @@ class DreamsContainer extends React.Component {
   render() {
     return (
       <div className="dream-container">
-        <p>This is where the dreams go.</p>
-        <Dream />
-        <Dream />
-        <Dream />
+        <p>Your dreams</p>
+        {Object.keys(this.props.dreams).map(key => {
+          return (<Dream
+            key={key}
+            index={key}
+            details={this.props.dreams[key]} />)
+        })}
       </div>
     )
   }

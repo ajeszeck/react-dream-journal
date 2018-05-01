@@ -30,6 +30,8 @@
   flex-direction: column;
   padding: 1rem;
   align-self: center;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
 .dream-container {
@@ -44,9 +46,21 @@
 }
 
 .dream {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   width: 90%;
   border: 1px solid black;
   margin-bottom: 1rem;
   border-radius: 4%;
   background: white;
+  padding: 1rem;
+}
+
+.dream .good {
+  background: green;
+}
+
+.dream .bad {
+  background: red;
 }
