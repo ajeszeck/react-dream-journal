@@ -19,12 +19,12 @@ class AddFishForm extends React.Component {
   render() {
     return (
       <form className="dream-edit" onSubmit={this.createDream}>
-        <textarea name="description" ref={this.descRef} type="text" placeholder="Describe your dream" required/>
-        <select name="good-or-bad" ref={this.typeRef} placeholder="What kind of dream was it?" required>
+        <textarea name="description" className="form-field" ref={this.descRef} type="text" placeholder="Describe your dream" required/>
+        <select name="good-or-bad" className="form-field" ref={this.typeRef} placeholder="What kind of dream was it?" required>
           <option value="good">Good</option>
           <option value="bad">Bad</option>
         </select>
-        <label>When was this dream?<input type="date" /></label>
+        <label>When was this dream?<input className="form-field" type="date" /></label>
         <button type="submit">+ Add Dream</button>
       </form>
     )
