@@ -1,70 +1,229 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+$primary-color: #2F4073;
+$accent: #071744;
+$secondary: #737FA2;
+$foreground: #4D5D8A;
+$background: #17285B;
+
+body, html {
+  font-family: 'Lato', sans-serif;
+}
+
 .App {
   text-align: center;
+  background-color: $secondary;
+  height: 100vh;
 }
 
 .App-header {
-  background-color: #222;
-  height: 40px;
-  padding: 5px;
+  padding: 0.5rem;
+  background: $foreground;
   color: white;
 }
 
 .App-title {
-  font-size: 1em;
-}
-
-.App-intro {
-  font-size: large;
+  font-size: 1.5em;
 }
 
 .app-body {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  align-items: flex-start;
   justify-content: center;
 }
 
+// AddDreamForm STYLING *******
 .dream-edit {
-  background: skyblue;
+  background: $accent;
+  color: white;
+  width: 30%;
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  align-self: center;
+  margin: 1rem;
   border: 1px solid black;
   border-radius: 5px;
 }
 
 .form-field {
-  margin:0.5rem;
+  margin: 0.5rem;
 }
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  li {
+    display: flex;
+    align-items: center;
+    color: #AAAAAA;
+    margin-right: 1rem;
+    width: 100%;
+    height: 30px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.5rem;;
+    margin-bottom: 0.5rem;
+    input[type=radio] {
+      position: absolute;
+      visibility: hidden;
+    }
+    label {
+      // display: block;
+      // position: relative;
+      z-index: 9;
+      cursor: pointer;
+      -webkit-transition: all 0.25s linear;
+    }
+    .check {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 0.5rem;
+      border: 3px solid #AAAAAA;
+      border-radius: 100%;
+      width: 10px;
+      height: 10px;
+      z-index: 5;
+    }
+    .check::before {
+    	content: '';
+      border-radius: 100%;
+      height: 4px;
+      width: 4px;
+      top: 3px;
+    	left: 3px;
+      margin: auto;
+    	transition: background 0.25s linear;
+    	-webkit-transition: background 0.25s linear;
+    }
+  }
+  li:hover {
+    .check {
+      border: 4px solid #FFFFFF;
+    }
+    label {
+      color: #FFFFFF;
+    }
+  }
+}
+
+input[type=radio]:checked.good-radio + .check {
+  border: 3px solid #0DFF92;
+}
+
+input[type=radio]:checked.neutral-radio + .check {
+  border: 3px solid orange;
+}
+
+input[type=radio]:checked.bad-radio + .check {
+  border: 3px solid red;
+}
+
+input[type=radio]:checked.good-radio ~ .check::before{
+  background: #0DFF92;
+}
+
+input[type=radio]:checked.neutral-radio ~ .check::before{
+  background: orange;
+}
+
+input[type=radio]:checked.bad-radio ~ .check::before{
+  background: red;
+}
+
+input[type=radio]:checked.good-radio ~ label {
+  color: #0DFF92;
+}
+
+input[type=radio]:checked.neutral-radio ~ label {
+  color: orange;
+}
+
+input[type=radio]:checked.bad-radio ~ label {
+  color: red;
+}
+
+.submit-button {
+  margin-top: 0.8rem;
+  align-self: center;
+  height: 40px;
+  border: 1px solid #AAAAAA;
+  background: none;
+  color: #AAAAAA;
+  font-size: 0.8rem;
+}
+
+.submit-button:hover {
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  background: black;
+  transition: border 0.40s linear;
+  transition: background 0.40s linear;
+
+}
+
+
+// ***** STYLES FOR DISPLAYING DREAMS *******
 
 .dream-container {
   display: flex;
+  width: 60%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 0.75rem;
+  border: 1px solid black;
+  background-color: $accent;
+  color: white;
   margin-top: 1rem;
-  border: 3px solid black;
-  border-radius: 5%;
 }
 
 .dream {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   width: 90%;
-  border: 1px solid black;
   margin-bottom: 1rem;
-  border-radius: 4%;
   background: white;
+  color: black;
   padding: 1rem;
-}
-
-.dream .good {
-  background: green;
-}
-
-.dream .bad {
-  background: red;
+  .dream-date {
+    width: 100%;
+    text-align: left;
+  }
+  .desc-date {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+  }
+  .Good {
+    background: green;
+    width: 100px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
+  }
+  .Bad {
+    background: red;
+    width: 100px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
+  }
+  .Neutral {
+    background: tan;
+    width: 100px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
+  }
 }

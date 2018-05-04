@@ -36,8 +36,8 @@ class App extends Component {
           <h1 className="App-title">Dream Journal</h1>
         </header>
         <div className="app-body">
-          <AddDreamForm addDream={this.addDream}/>
           <DreamsContainer className="dream-container" dreams={this.state.dreams}/>
+          <AddDreamForm addDream={this.addDream}/>
         </div>
       </div>
     );
