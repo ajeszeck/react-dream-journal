@@ -11,7 +11,8 @@ class DreamsContainer extends React.Component {
           return (<Dream
             key={key}
             index={key}
-            details={this.props.dreams[key]} />)
+            details={this.props.dreams[key]}
+            deleteDream={this.props.deleteDream} />)
         })}
       </div>
     )
