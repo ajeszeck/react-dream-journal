@@ -12,7 +12,9 @@ class Dream extends React.Component {
             <div className={type}></div>
             <div className="dream-date">{date}</div>
           </div>
-          <div className="delete-button" onClick={() => this.props.deleteDream(this.props.index)}>&times;</div>
+          <div className="delete-button-hover">
+            <div className="delete-button" onClick={() => this.props.deleteDream(this.props.index)}>&times;</div>
+          </div>
         </div>
         <div className="dream-desc" >{desc}</div>
       </div>

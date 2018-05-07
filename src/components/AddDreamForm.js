@@ -13,8 +13,6 @@ class AddDreamForm extends React.Component {
 
   createDream = (event) => {
     event.preventDefault();
-    console.log(this.typeRef.current.value);
-    console.log(this.radioButtonOptionChoice);
     const dream = {
       desc: this.descRef.current.value,
       type: this.radioButtonOptionChoice,
