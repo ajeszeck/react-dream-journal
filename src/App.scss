@@ -34,7 +34,7 @@ body, html {
 }
 
 // AddDreamForm STYLING *******
-.dream-edit {
+.dream-add {
   background: $accent;
   color: white;
   width: 30%;
@@ -153,6 +153,7 @@ input[type=radio]:checked.bad-radio ~ label {
   background: none;
   color: #AAAAAA;
   font-size: 0.8rem;
+  border-radius: 5px;
 }
 
 .submit-button:hover {
@@ -161,7 +162,6 @@ input[type=radio]:checked.bad-radio ~ label {
   background: black;
   transition: border 0.40s linear;
   transition: background 0.40s linear;
-
 }
 
 
@@ -178,6 +178,7 @@ input[type=radio]:checked.bad-radio ~ label {
   background-color: $accent;
   color: white;
   margin-top: 1rem;
+  border-radius: 5px;
 }
 
 .dream {
@@ -185,6 +186,7 @@ input[type=radio]:checked.bad-radio ~ label {
   flex-direction: column;
   justify-content: space-between;
   width: 90%;
+  border-radius: 5px;
   margin-bottom: 1rem;
   background: white;
   color: black;
@@ -259,5 +261,26 @@ input[type=radio]:checked.bad-radio ~ label {
     border-radius: 100%;
     transition: background 0.20s linear;
 
+  }
+
+  // ****** EditDreamForm Styles ******
+
+  .edit-dream-button {
+    font-size: 0.8rem;
+    color: #444444;
+    text-align: right;
+    cursor: pointer;
+    margin-right: 0.6rem;
+  }
+
+  .edit-dream-button:hover {
+    color: black;
+    transition: color 0.20s linear;
+  }
+
+  form.dream-edit-form {
+    display: none;
+    background-color: white;
+    width: 100%;
   }
 }

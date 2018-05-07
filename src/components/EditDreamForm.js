@@ -1,33 +1,16 @@
 import React from 'react';
 
-class AddDreamForm extends React.Component {
-  radioButtonOptionChoice = null;
-
-  handleChange = (changeEvent) => {
-    this.radioButtonOptionChoice = changeEvent.target.value;
-  }
-
-  descRef = React.createRef();
-  typeRef = React.createRef();
-  dateRef = React.createRef();
-
-  createDream = (event) => {
-    event.preventDefault();
-    const dream = {
-      desc: this.descRef.current.value,
-      type: this.radioButtonOptionChoice,
-      date: this.dateRef.current.value
-    }
-
-    this.props.addDream(dream);
-    event.currentTarget.reset();
+class EditDreamForm extends React.Component {
+  handleChange = (event) => {
+    console.log(event);
   }
 
   render() {
+    const { desc, type, date } = this.props.details;
+
     return (
-      <form className="dream-add" onSubmit={this.createDream}>
-        <p>Add a new dream</p>
-        <textarea name="description" className="form-field" ref={this.descRef} type="text" placeholder="Describe your dream" required/>
+      <form className="dream-edit-form" onSubmit={this.createDream}>
+        <textarea name="description" className="form-field" ref={this.descRef} type="text" value={desc} onChange={this.handleChange} placeholder="Describe your dream" required/>
         <ul className="radio-button-div">
           <p>How was the dream?</p>
           <li>
@@ -38,6 +21,7 @@ class AddDreamForm extends React.Component {
               value="Good"
               className="good-radio"
               ref={this.typeRef}
+              checked={type === "Good"}
               onChange={this.handleChange}/>
               <div className="check"><div className="inside"></div></div>
               <label for="good">Good</label>
@@ -50,6 +34,7 @@ class AddDreamForm extends React.Component {
               value="Neutral"
               className="neutral-radio"
               ref={this.typeRef}
+              checked={type === "Neutral"}
               onChange={this.handleChange} />
               <div className="check"><div className="inside"></div></div>
             <label for="neutral">Neutral</label>
@@ -62,16 +47,17 @@ class AddDreamForm extends React.Component {
               value="Bad"
               className="bad-radio"
               ref={this.typeRef}
+              checked={type === "Bad"}
               onChange={this.handleChange}/>
             <div className="check"><div className="inside"></div></div>
             <label for="bad">Bad</label>
           </li>
         </ul>
-        <label>Night of: <input className="form-field" type="date" ref={this.dateRef}/></label>
-        <button className="submit-button" type="submit">add your dream</button>
+        <label>Night of: <input className="form-field" type="date" ref={this.dateRef} value={date} onChange={this.handleChange}/></label>
+        <button className="submit-button">done</button>
       </form>
     )
   }
 }
 
-export default AddDreamForm;
+export default EditDreamForm;
