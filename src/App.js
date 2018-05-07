@@ -10,7 +10,6 @@ class App extends Component {
   };
 
   componentDidMount() {
-    console.log("Mounted!")
     // FIRST REINSTATE OUR LOCAL localStorage
     this.ref = base.syncState(`dreams`, {
       context: this,
@@ -26,11 +25,9 @@ class App extends Component {
     const dreams = {...this.state.dreams}
     dreams[`dream${Date.now()}`] = dream;
     this.setState({ dreams });
-    console.log(this.state.dreams)
   }
 
   deleteDream = (key) => {
-    console.log("delete clicked")
     // 1. take a copy of all dreams
     const dreams = {...this.state.dreams};
     // 2. set current dream equal to null to remove from firebase
@@ -46,8 +43,10 @@ class App extends Component {
           <h1 className="App-title">Dream Journal</h1>
         </header>
         <div className="app-body">
-          <DreamsContainer className="dream-container" dreams={this.state.dreams}
-          deleteDream={this.deleteDream}/>
+          <DreamsContainer
+            className="dream-container"
+            dreams={this.state.dreams}
+            deleteDream={this.deleteDream}/>
           <AddDreamForm
             addDream={this.addDream} />
         </div>
