@@ -29,6 +29,16 @@ class App extends Component {
     console.log(this.state.dreams)
   }
 
+  deleteDream = (key) => {
+    console.log("delete clicked")
+    // 1. take a copy of all dreams
+    const dreams = {...this.state.dreams};
+    // 2. set current dream equal to null to remove from firebase
+    dreams[key] = null;
+    // 3. set the altered state to be equal to the saved state
+    this.setState({ dreams });
+  }
+
   render() {
     return (
       <div className="App">
@@ -36,8 +46,10 @@ class App extends Component {
           <h1 className="App-title">Dream Journal</h1>
         </header>
         <div className="app-body">
-          <DreamsContainer className="dream-container" dreams={this.state.dreams}/>
-          <AddDreamForm addDream={this.addDream}/>
+          <DreamsContainer className="dream-container" dreams={this.state.dreams}
+          deleteDream={this.deleteDream}/>
+          <AddDreamForm
+            addDream={this.addDream} />
         </div>
       </div>
     );

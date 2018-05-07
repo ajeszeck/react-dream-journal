@@ -149,32 +149,46 @@ input[type=radio]:checked.bad-radio ~ label {
   .dream .dream-date {
     width: 100%;
     text-align: left; }
-  .dream .desc-date {
+  .dream .type-date {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; }
+  .dream .top-row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 0.5rem; }
+    margin-top: 0.5rem;
+    margin-left: 0.5rem; }
+  .dream .dream-desc {
+    align-self: flex-start;
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    font-weight: bold; }
   .dream .Good {
     background: green;
-    width: 100px;
-    height: 50px;
+    width: 20px;
+    height: 20px;
     display: flex;
+    margin-right: 0.5rem;
     justify-content: center;
-    align-items: center;
-    border-radius: 5%; }
+    align-items: center; }
+  .dream .Neutral {
+    background: orange;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    margin-right: 0.5rem;
+    justify-content: center;
+    align-items: center; }
   .dream .Bad {
     background: red;
-    width: 100px;
-    height: 50px;
+    width: 20px;
+    height: 20px;
     display: flex;
+    margin-right: 0.5rem;
     justify-content: center;
-    align-items: center;
-    border-radius: 5%; }
-  .dream .Neutral {
-    background: tan;
-    width: 100px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5%; }
+    align-items: center; }
+  .dream .delete-button {
+    font-size: 1.1rem;
+    font-weight: bolder;
+    cursor: pointer; }
