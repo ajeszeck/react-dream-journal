@@ -159,11 +159,6 @@ input[type=radio]:checked.bad-radio ~ label {
     justify-content: space-between;
     margin-top: 0.5rem;
     margin-left: 0.5rem; }
-  .dream .dream-desc {
-    align-self: flex-start;
-    margin-top: 1rem;
-    margin-left: 0.5rem;
-    font-weight: bold; }
   .dream .Good {
     background: green;
     width: 20px;
